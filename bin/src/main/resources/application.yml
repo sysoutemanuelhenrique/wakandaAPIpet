@@ -1,6 +1,5 @@
-
+spring.application.name=APIpetCliente
 
 server:
-  port: 8080
   servlet:
     context-path: /ClientePet/Api
