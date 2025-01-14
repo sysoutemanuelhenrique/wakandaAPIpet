@@ -19,19 +19,22 @@ import lombok.NoArgsConstructor;
 public class ClientePet {
 	
 	@Id
-	private UUID cliteId;
+	//@GenereteValue )strategy = GenerationType.AUTO) "Gera a senha sem precisar do construtor"
+	private UUID ClienteId;
 	@NotBlank
 	private String nomeCompleto;
 	@Email
+	@NotBlank
 	private String email;
 	@CPF
+	@NotBlank
 	private int cpf;
 	private Sexo  sexo;
 	
 	@Getter(value = AccessLevel.PRIVATE)
 	private String senha;
 	private LocalDate dataCadastro;
-	
+	private LocalDate dataNascimento;
 	
 	public boolean ValidaSenha (String senhaNova)
 	{ return this.senha.equals(senhaNova);
@@ -39,11 +42,11 @@ public class ClientePet {
 		
 	}
 
-	public ClientePet(UUID cliteId, @NotBlank String nomeCompleto, @Email String email, @CPF int cpf, Sexo sexo,
-			String senha) {
+	public ClientePet(UUID ClienteId, @NotBlank String nomeCompleto, @Email String email, @CPF int cpf, Sexo sexo,
+			String senha, LocalDate dataNasciment, LocalDate dataCadastro) {
 		super();
 		
-		this.cliteId = UUID.randomUUID();
+		this.ClienteId = UUID.randomUUID();
 		this.nomeCompleto = nomeCompleto;
 		this.email = email;
 		this.cpf = cpf;
