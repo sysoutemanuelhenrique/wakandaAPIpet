@@ -14,7 +14,7 @@ import jakarta.validation.Valid;
 public interface ClienteAPI {
 	@PostMapping
 	@ResponseStatus (code = HttpStatus.CREATED)
-	ClienteResponse postCliente(@Valid @RequestBody ClienteRequest clienteRequest);
+	ClienteResponse postCliente(@RequestBody ClienteRequest clienteRequest);
 	
 
 }
