@@ -1,0 +1,5 @@
+spring.application.name=APIpetCliente
+
+server:
+  servlet:
+    context-path: /ClientePet/Api
