@@ -1,0 +1,32 @@
+package com.wakanda.APIpetCliente.aplication.api.pet;
+
+import java.util.UUID;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.wakanda.APIpetCliente.aplication.Domain.pet.Pet;
+import com.wakanda.APIpetCliente.aplication.api.cliente.ClienteResponse;
+import com.wakanda.APIpetCliente.aplication.service.pet.PetService;
+
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
+
+@Log4j2
+@RestController
+@RequiredArgsConstructor
+public class PetControler implements PetAPI {
+
+	private final PetService petService;
+
+	@Override
+	public PetResponse postPET(UUID clienteId, @Valid PetRequest petRequest) {
+		log.info("[inicia} PetController - postPet]");
+	PetResponse postPet =  petService.criaPet(clienteId, petRequest);
+		log.info("[IdCliente]");
+		log.info("[Finalizar} PetController - postPet]");
+			return postPet;
+	
+	}
+
+}

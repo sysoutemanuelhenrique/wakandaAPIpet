@@ -1,31 +1,28 @@
-package com.wakanda.APIpetCliente.aplication;
+package com.wakanda.APIpetCliente.aplication.api.cliente;
 
 import java.time.LocalDate;
-import java.util.UUID;
-
 import org.hibernate.validator.constraints.br.CPF;
 
-import com.wakanda.APIpetCliente.domain.Sexo;
+import com.wakanda.APIpetCliente.aplication.Domain.cliente.Sexo;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AccessLevel;
-import lombok.Getter;
 import lombok.Value;
 
 @Value
 public class ClienteRequest {
 
+	@NotBlank
 	private String nomeCompleto;
 	@Email
 	@NotBlank
 	private String email;
 	@CPF
 	@NotBlank
-	private int cpf;
+	private String cpf;
 	private Sexo  sexo;
+	private LocalDate dataCadastro;
+	private LocalDate dataNascimento;
 	
-	@Getter(value = AccessLevel.PRIVATE)
-	private String senha;
 	
 }
