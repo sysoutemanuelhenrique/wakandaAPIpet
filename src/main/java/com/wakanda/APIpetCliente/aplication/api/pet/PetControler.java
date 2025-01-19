@@ -1,10 +1,12 @@
 package com.wakanda.APIpetCliente.aplication.api.pet;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wakanda.APIpetCliente.aplication.Domain.pet.Pet;
+import com.wakanda.APIpetCliente.aplication.api.cliente.ClienteListResponse;
 import com.wakanda.APIpetCliente.aplication.api.cliente.ClienteResponse;
 import com.wakanda.APIpetCliente.aplication.service.pet.PetService;
 
@@ -27,6 +29,17 @@ public class PetControler implements PetAPI {
 		log.info("[Finalizar} PetController - postPet]");
 			return postPet;
 	
+	}
+
+	@Override
+	public List<PetListResponse> getPetsDomClientebyId(UUID clienteID) {
+		
+		log.info("[inicia} PetController - getPetsDomClientebyId]");
+		 List<PetListResponse> pets = PetService.petsClientesbyId();
+		log.info("[IdCliente]");
+		log.info("[Finalizar} PetController - getPetsDomClientebyId]");
+		
+		return pets;
 	}
 
 }
