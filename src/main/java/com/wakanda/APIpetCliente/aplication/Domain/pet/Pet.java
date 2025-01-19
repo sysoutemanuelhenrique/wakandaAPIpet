@@ -9,6 +9,7 @@ import org.springframework.stereotype.Indexed;
 
 import com.wakanda.APIpetCliente.aplication.api.cliente.ClienteEditaRequest;
 import com.wakanda.APIpetCliente.aplication.api.cliente.ClienteRequest;
+import com.wakanda.APIpetCliente.aplication.api.pet.PetEditaRequest;
 import com.wakanda.APIpetCliente.aplication.api.pet.PetRequest;
 
 import jakarta.persistence.Column;
@@ -82,6 +83,33 @@ public class Pet {
 
 
 
+	public void altera(PetEditaRequest petEditaRequest) {
+		this.nomePet = petEditaRequest.getNomePet();
+		this.porte = petEditaRequest.getPorte();
+		this.sexoPet = petEditaRequest.getSexoPet();
+		this.microChip = petEditaRequest.getMicroChip();
+		this.raca = petEditaRequest.getRaca();
+		this.pelagemCor = petEditaRequest.getPelagemCor();
+		this.tipoPet = petEditaRequest.getTipoPet();
+		this.dataCadastro = petEditaRequest.getDataCadastro();
+		this.data = petEditaRequest.getData();
+		this.peso = petEditaRequest.getPeso();
+		
+	}
+
+
+
+
+
+
+
+
+
+
+	}
+
+
+
 
 
 
@@ -94,7 +122,7 @@ public class Pet {
 
 
 	
-	}
+	
 	
 
 

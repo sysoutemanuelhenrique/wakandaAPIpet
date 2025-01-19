@@ -63,7 +63,7 @@ private final ClienteRepository clienteRepository;
 		log.info("[inicia] -  ClienteAplicationService - editaCliente");
 		 Cliente cliente = clienteRepository.clientesByid(idCliente);
 		 cliente.altera(clienteEditaRequest);
-		 clienteRepository.deletaById(cliente);
+		// clienteRepository.deletaById(cliente);
 		 log.info("[finaliza] -  ClienteAplicationService - editaCliente");
 		
 	}

@@ -14,4 +14,8 @@ public interface PetSpringJPARepository extends JpaRepository<Pet, UUID>{
 
 	List <Pet>  buscaPetsClienteById (UUID clienteID);
 
+	void deleteAllById(UUID clienteID, UUID petId);
+
+	void deleteAllBy(Pet pet);
+
 }

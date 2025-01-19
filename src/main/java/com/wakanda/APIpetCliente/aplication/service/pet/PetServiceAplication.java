@@ -10,6 +10,7 @@ import com.wakanda.APIpetCliente.aplication.Domain.pet.Pet;
 import com.wakanda.APIpetCliente.aplication.api.cliente.ClienteListResponse;
 import com.wakanda.APIpetCliente.aplication.api.cliente.ClienteResponse;
 import com.wakanda.APIpetCliente.aplication.api.pet.PetClienteDetalheReponse;
+import com.wakanda.APIpetCliente.aplication.api.pet.PetEditaRequest;
 import com.wakanda.APIpetCliente.aplication.api.pet.PetListResponse;
 import com.wakanda.APIpetCliente.aplication.api.pet.PetRequest;
 import com.wakanda.APIpetCliente.aplication.api.pet.PetResponse;
@@ -55,6 +56,25 @@ public class PetServiceAplication implements PetService {
 		Pet pet = petRepository.buscaPet(petId);
 		log.info("[finaliza] - PetAplicationService -  buscaPetDosClientesComIt");
 		return new PetClienteDetalheReponse(pet);
+	}
+
+	@Override
+	public void deletaPetById(UUID clienteID, UUID petId) {
+		clienteService.clietesById(clienteID);
+		Pet pet = petRepository.buscaPet(petId);
+				petRepository.deletaById(pet);
+		
+		
+	}
+
+	@Override
+	public void editaCliente(UUID clienteID, UUID petId, PetEditaRequest petEditaRequest) {
+		clienteService.clietesById(clienteID);
+		Pet pet = petRepository.buscaPet(petId);
+		pet.altera(petEditaRequest);
+		petRepository.petSalva(pet);
+		
+		
 	}
 
 }

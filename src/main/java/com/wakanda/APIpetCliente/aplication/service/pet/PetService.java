@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import com.wakanda.APIpetCliente.aplication.Domain.pet.Pet;
 import com.wakanda.APIpetCliente.aplication.api.pet.PetClienteDetalheReponse;
+import com.wakanda.APIpetCliente.aplication.api.pet.PetEditaRequest;
 import com.wakanda.APIpetCliente.aplication.api.pet.PetListResponse;
 import com.wakanda.APIpetCliente.aplication.api.pet.PetRequest;
 import com.wakanda.APIpetCliente.aplication.api.pet.PetResponse;
@@ -17,6 +18,8 @@ public interface PetService {
 	List<PetListResponse> petsClientesbyId(UUID clienteID);
 
 	PetClienteDetalheReponse buscaPetDosClientesComId(UUID clienteID, UUID petId);
+	void deletaPetById(UUID clienteID, UUID petId);
+	void editaCliente(UUID clienteID, UUID petId,PetEditaRequest petEditaRequest);
 
 	
 
