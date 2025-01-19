@@ -9,6 +9,7 @@ import com.wakanda.APIpetCliente.aplication.Domain.cliente.Cliente;
 import com.wakanda.APIpetCliente.aplication.Domain.pet.Pet;
 import com.wakanda.APIpetCliente.aplication.api.cliente.ClienteListResponse;
 import com.wakanda.APIpetCliente.aplication.api.cliente.ClienteResponse;
+import com.wakanda.APIpetCliente.aplication.api.pet.PetClienteDetalheReponse;
 import com.wakanda.APIpetCliente.aplication.api.pet.PetListResponse;
 import com.wakanda.APIpetCliente.aplication.api.pet.PetRequest;
 import com.wakanda.APIpetCliente.aplication.api.pet.PetResponse;
@@ -45,6 +46,12 @@ public class PetServiceAplication implements PetService {
 		List<Pet> pet = petRepository.buscaPetsClienteById(clienteID);
 		log.info("[finaliza] - PetAplicationService -  petsClientesbyIt");
 		return PetListResponse.converte(pet);
+	}
+
+	@Override
+	public PetClienteDetalheReponse buscaPetDosClientesComId(UUID clienteID) {
+		
+		return null;
 	}
 
 }

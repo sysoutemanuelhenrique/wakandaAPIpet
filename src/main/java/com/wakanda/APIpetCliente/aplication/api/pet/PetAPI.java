@@ -32,4 +32,8 @@ public interface PetAPI {
 	List <PetListResponse> getPetsDomClientebyId (@PathVariable UUID clienteID);
 	
 
+	@GetMapping  (value = "{idPet}")
+	@ResponseStatus (code = HttpStatus.OK)
+	PetClienteDetalheReponse getPetClienteComId (@PathVariable UUID clienteID,  @PathVariable UUID petId);
+
 }
