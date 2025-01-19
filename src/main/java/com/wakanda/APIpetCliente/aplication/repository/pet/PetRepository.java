@@ -9,5 +9,6 @@ import com.wakanda.APIpetCliente.aplication.Domain.pet.Pet;
 public interface PetRepository {
 	Pet petSalva(Pet pet);
 	List<Pet> buscaPetsClienteById(UUID clienteID);
+	Pet buscaPet(UUID petId);
 
 }

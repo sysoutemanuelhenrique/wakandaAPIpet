@@ -3,6 +3,7 @@ package com.wakanda.APIpetCliente.aplication.api.pet;
 import java.time.LocalDate;
 import java.util.UUID;
 
+import com.wakanda.APIpetCliente.aplication.Domain.pet.Pet;
 import com.wakanda.APIpetCliente.aplication.Domain.pet.Porte;
 import com.wakanda.APIpetCliente.aplication.Domain.pet.SexoPet;
 import com.wakanda.APIpetCliente.aplication.Domain.pet.TipoPet;
@@ -17,8 +18,23 @@ import lombok.Value;
 @Value
 public class PetClienteDetalheReponse {
 	
-	private UUID idPet;
+	public PetClienteDetalheReponse(Pet pet) {
+		this.idPet = pet.getIdPet();
+		this.clienteId = pet.getClienteId();
+		this.nomePet = pet.getNomePet();
+		this.porte = pet.getPorte();
+		this.sexoPet = pet.getSexoPet();
+		this.microChip = pet.getMicroChip();
+		this.raca = pet.getRaca();
+		this.pelagemCor = pet.getPelagemCor();
+		this.tipoPet = pet.getTipoPet();
+		this.dataCadastro = LocalDate.now();
+		this.data = pet.getData();
+		this.peso = pet.getPeso();
+	}
+	
 	private UUID clienteId;
+	private UUID idPet;
 	private String nomePet;
 	private Porte porte;
 	private SexoPet sexoPet;
