@@ -13,11 +13,11 @@ import jakarta.validation.Valid;
 public interface PetService {
 
 	PetResponse criaPet(UUID clienteId, @Valid PetRequest petRequest);
+	List<PetListResponse> petsClientesbyId(UUID clienteID);
 
-	static List<PetListResponse> petsClientesbyId() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+
+	
 			
 }
 	

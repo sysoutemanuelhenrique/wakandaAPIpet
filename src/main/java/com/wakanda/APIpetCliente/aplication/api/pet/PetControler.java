@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.wakanda.APIpetCliente.aplication.Domain.pet.Pet;
 import com.wakanda.APIpetCliente.aplication.api.cliente.ClienteListResponse;
 import com.wakanda.APIpetCliente.aplication.api.cliente.ClienteResponse;
+import com.wakanda.APIpetCliente.aplication.service.Cliente.ClienteService;
 import com.wakanda.APIpetCliente.aplication.service.pet.PetService;
 
 import jakarta.validation.Valid;
@@ -20,6 +21,7 @@ import lombok.extern.log4j.Log4j2;
 public class PetControler implements PetAPI {
 
 	private final PetService petService;
+	
 
 	@Override
 	public PetResponse postPET(UUID clienteId, @Valid PetRequest petRequest) {
@@ -35,8 +37,8 @@ public class PetControler implements PetAPI {
 	public List<PetListResponse> getPetsDomClientebyId(UUID clienteID) {
 		
 		log.info("[inicia} PetController - getPetsDomClientebyId]");
-		 List<PetListResponse> pets = PetService.petsClientesbyId();
-		log.info("[IdCliente]");
+		log.info("[IdCliente]", clienteID);
+		 List<PetListResponse> pets = petService.petsClientesbyId(clienteID);
 		log.info("[Finalizar} PetController - getPetsDomClientebyId]");
 		
 		return pets;
