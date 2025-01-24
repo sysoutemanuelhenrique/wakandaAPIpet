@@ -24,15 +24,10 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	<developers>
 		<developer/>
 	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
+
 	<properties>
     <spring-data-bom-scope>import</spring-data-bom-scope>
-		<java.version>17</java.version>
+		<java.version>17.0.3/java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -76,6 +71,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

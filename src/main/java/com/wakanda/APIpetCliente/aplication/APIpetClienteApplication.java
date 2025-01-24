@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableJpaRepositories(basePackages = " com.wakanda.APIpetCliente.aplication.infra;")
 @EntityScan(basePackages = "com.wakanda.APIpetCliente.aplication.service.Clienten")
 public class APIpetClienteApplication {
-	
+
 	@GetMapping
 	public String getHomeTeste() {
-		return  "Cliente Pet - API Home";
+		return "Cliente Pet - API Home";
 	}
 
 	public static void main(String[] args) {
